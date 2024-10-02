@@ -1070,4 +1070,7 @@
     <root level="WARN">
         <appender-ref ref="asyncROOT"/>
     </root>
+    <root level="INFO">
+        <appender-ref ref="STDOUT"/>
+    </root>
 </configuration>
