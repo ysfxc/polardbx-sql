@@ -407,7 +407,7 @@ public class MdlDeadlockDetectionTask implements Runnable {
 
         logger.debug("MDL Deadlock detection task starts.");
         try {
-            detectMetaDataDeadLock();
+//            detectMetaDataDeadLock(); 暂时关闭死锁检测, 防止干扰debug
         } catch (Throwable ex) {
             if (StringUtils.containsIgnoreCase(ex.getMessage(), "denied")) {
                 cancel();
