@@ -141,10 +141,10 @@ public class TaskExecutor {
     @PostConstruct
     public synchronized void start() {
         checkState(!closed, "TaskExecutor is closed");
-        for (int i = 0; i < highRunnerThreads; i++) {
+        for (int i = 0; i < 1; i++) {
             addTpRunnerThread();
         }
-        for (int i = 0; i < lowRunnerThreads; i++) {
+        for (int i = 0; i < 1; i++) {
             addApRunnerThread();
         }
         new Thread(new RunnerMonitor()).start();
