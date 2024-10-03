@@ -83,7 +83,7 @@ public class SmpResultCursor extends AbstractCursor {
         }
         if (currentChunk == null || currentChunk.getPositionCount() == nextPos) {
             if (syncMode) {
-                Chunk ret = bufferExec.takeChunk();
+                Chunk ret = bufferExec.takeChunk(); // 如果执行流程过长, 这里会阻塞
                 if (ret != null) {
                     currentChunk = ret;
                     nextPos = 0;
